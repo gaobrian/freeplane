@@ -113,6 +113,7 @@ import org.freeplane.view.swing.features.filepreview.ViewerController;
 import org.freeplane.view.swing.features.nodehistory.NodeHistory;
 import org.freeplane.view.swing.features.progress.mindmapmode.ProgressFactory;
 import org.freeplane.view.swing.features.time.mindmapmode.ReminderHook;
+import org.freeplane.view.swing.features.triz.mindmapmode.TrizHook;
 import org.freeplane.view.swing.map.ShowNotesInMapAction;
 import org.freeplane.view.swing.map.attribute.AttributePanelManager;
 import org.freeplane.view.swing.map.attribute.EditAttributesAction;
@@ -160,6 +161,7 @@ public class MModeControllerFactory {
 		FreeNode.install();
 		new CreationModificationPlugin();
 		modeController.addExtension(ReminderHook.class, new ReminderHook(modeController));
+		modeController.addExtension(TrizHook.class, new TrizHook(modeController));
 		new AutomaticEdgeColorHook();
 		new ViewerController();
 		modeController.addAction(new AddAttributeAction());

@@ -476,7 +476,9 @@ abstract public class FrameController implements ViewController {
 				final Iterable<JComponent> toolBars = controller.getModeController().getUserInputListenerFactory()
 				    .getToolBars(j);
 				for (final JComponent toolBar : toolBars) {
-					UIComponentVisibilityDispatcher.dispatcher(toolBar).resetVisible();
+					if( UIComponentVisibilityDispatcher.dispatcher(toolBar) != null ){
+						UIComponentVisibilityDispatcher.dispatcher(toolBar).resetVisible();
+					}					
 				}
 			}
 			showWindows(visibleFrames);
@@ -492,7 +494,9 @@ abstract public class FrameController implements ViewController {
 				final Iterable<JComponent> toolBars = controller.getModeController().getUserInputListenerFactory()
 				    .getToolBars(j);
 				for (final JComponent toolBar : toolBars) {
-					UIComponentVisibilityDispatcher.dispatcher(toolBar).resetVisible();
+					if(UIComponentVisibilityDispatcher.dispatcher(toolBar) != null){
+					   UIComponentVisibilityDispatcher.dispatcher(toolBar).resetVisible();
+					}
 				}
 			}
 			showWindows(visibleFrames);
